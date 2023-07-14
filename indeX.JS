@@ -2,7 +2,7 @@ const express = require("express");
 const app = new express();
 
 
-const userlist = ["z-廖川","z-郭昱林","z-刘佑萍","z-曾川","Z-黄珂","Z-林川"];
+const userlist = ["z-廖川","z-郭昱林","z-刘佑萍","z-曾川","Z-黄珂","z-林川"];
 app.get("/get_user_power", (req, res, next) => {
 	// 获取用户权限
 	console.log('4444')
