@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "抢单插件",
+  "version": "1.0",
+  "description": "抢单条件：1.信息中存在电话、2:不存在某些关键字（取消。。。）；3:提交信息10s以内的单",
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mpkf.weixin.qq.com/cgi-bin/*","https://qiangd.loca.lt/*"],
+      "js": ["index.js"]
+    }
+  ]
+}
