@@ -12,7 +12,7 @@ async function fn1() {
   let div = document.createElement("div");
   div.style.position = "absolute";
   div.style.top = "20px";
-  div.style.right = "200px";
+  div.style.right = "150px";
   div.appendChild(span);
   div.appendChild(btn1);
   div.appendChild(btn2);
@@ -125,7 +125,7 @@ async function fn1() {
   btn2.addEventListener("click", function (e) {
     isPause = true;
   });
-  function sendHttp(api, params, data = {}, method = "get") {
+  function sendHttp(api, params={}, data = {}, method = "get") {
     return new Promise((resolve, reject) => {
       params = setquery(params);
       let xhr = new XMLHttpRequest();
@@ -186,6 +186,7 @@ async function fn1() {
     getPowerBtn.addEventListener('click',async function(e){
       try{
         let res=await sendHttp('https://qiangd.loca.lt/get_users')
+        console.log(res)
         alert(res.data.join(','))
       }catch(err){
         alert('获取失败，请重试！')
@@ -197,7 +198,8 @@ async function fn1() {
     div.appendChild(getKeyBtn)
     getKeyBtn.addEventListener('click',async function(e){
       try{
-        let res = await sendHttp('https://qiangd.loca.lt/get_keys',{keyword})
+        let res = await sendHttp('https://qiangd.loca.lt/get_keys')
+        console.log(res)
         alert(res.data.join(','))
       }catch(err){
         alert('获取失败，请重试！')

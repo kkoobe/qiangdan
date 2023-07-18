@@ -43,13 +43,12 @@ app.get("/set_keys", (req, res, next) => {
 });
 // 查看关键字
 app.get("/get_keys", (req, res, next) => {
-	// 新增用户权限
+	res.setHeader("Access-Control-Allow-Origin", "*");
 	const keywords = require("./keywords.json")
 	res.send({data:keywords,errcode:0});
 });
 // 查看权限人
 app.get("/get_users", (req, res, next) => {
-	// 新增用户权限
 	const userlist = require("./users.json")
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	res.send({data:userlist,errcode:0});
